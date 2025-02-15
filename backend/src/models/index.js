@@ -9,13 +9,13 @@ const db = { sequelize, Sequelize };
 fs.readdirSync(__dirname)
 .filter((file) => file !== "index.js" && file.endsWith(".js"))
 .forEach((file) => {
-    const model = require(path.join(__dirname, file)) (sequelize, Sequelize.DataTypes)
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes)
     db[model.name] = model;
 });
 
-Object.keys(db).forEach((modeName) => {
-    if (db[modeName].associate) {
-        db[modeName].associate(db);
+Object.keys(db).forEach((modelName) => {
+    if (db[modelName].associate) {
+        db[modelName].associate(db);
     }
 });
 
