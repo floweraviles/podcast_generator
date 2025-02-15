@@ -8,6 +8,7 @@ exports.generateScript = async (req, res) => {
         }
 
         const apiKey = process.env.GOOGLE_GEMINI_API_KEY;
+<<<<<<< HEAD
         const apiURL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
         const response = await axios.post(apiURL, {
@@ -21,6 +22,15 @@ exports.generateScript = async (req, res) => {
         });
 
         const generatedScript = response.data.candidates?.[0]?.content?.parts?.[0]?.text || "no script generated.";
+=======
+        const apiURL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateText?key=${apiKey}`;
+
+        const response = await axios.post(apiURL, {
+            prompt: { text: prompt },
+        });
+
+        const generatedScript = response.data.candidates?.[0]?.output || "no script generated.";
+>>>>>>> 0c4e6c6 (Handles AI script generation)
         res.json({ script: generatedScript })
     } catch (error) {
         console.error("Error generating script:", error.response?.data || error.message);
