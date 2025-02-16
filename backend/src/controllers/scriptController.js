@@ -8,13 +8,19 @@ exports.generateScript = async (req, res) => {
         }
 
         const apiKey = process.env.GOOGLE_GEMINI_API_KEY;
-        const apiURL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateText?key=${apiKey}`;
+        const apiURL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
         const response = await axios.post(apiURL, {
-            prompt: { text: prompt },
+            contents: [ // Use "contents" array as top-level
+                {
+                    parts: [ // Use "parts" array inside contents
+                        { text: prompt } // Use "text" to provide the prompt
+                    ]
+                }
+            ]
         });
 
-        const generatedScript = response.data.candidates?.[0]?.output || "no script generated.";
+        const generatedScript = response.data.candidates?.[0]?.content?.parts?.[0]?.text || "no script generated.";
         res.json({ script: generatedScript })
     } catch (error) {
         console.error("Error generating script:", error.response?.data || error.message);

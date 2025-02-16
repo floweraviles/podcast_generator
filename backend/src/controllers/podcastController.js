@@ -21,7 +21,7 @@ exports.getPodcasts = async (req, res) => {
 
 exports.deletePodcast = async (req,res) => {
     try {
-        await Podcast.destory({ where: { id: req.params.id, userId: req.user.id } });
+        await Podcast.destroy({ where: { id: req.params.id, userId: req.user.id } });
         res.json({ message: "podcast deleted" });
     } catch (error) {
         res.status(500).json({ error: error.message });
