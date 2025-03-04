@@ -34,13 +34,15 @@ const Register = () => {
             <h2>Create an Account</h2>
             {error && <p>{error}</p>}
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
                 <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
                 <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
                 <button>Register</button>
             </form>
         </div>
-    )
+    );
 
-}
+};
+
+export default Register;
