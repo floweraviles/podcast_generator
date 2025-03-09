@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    @apply bg-cyberBlack text-white; 
+}
+
+nav.cyberpunk-navbar {
+    @apply bg-cyberBlack p-4 shadow-lg shadow-neonPurple-sm flex justify-between items-center border-b-2 border-neonPurple;
+}
+
+nav.cyberpunk-navbar h1 {
+    @apply text-neonBlue text-3xl font-bold uppercase tracking-wider;
+}
+
+nav.cyberpunk-navbar div {
+    @apply flex space-x-6 items-center;
+}
+
+nav.cyberpunk-navbar a {
+    @apply text-cyberWhite hover:text-neonBlue transition-colors duration-200;
+}
+
+nav.cyberpunk-navbar a.pink-hover {
+    @apply hover:text-neonPink;
+}
+
+nav.cyberpunk-navbar a.green-hover {
+    @apply hover:text-neonGreen;
+}
