@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/global.css";
 
@@ -31,16 +31,18 @@ const Register = () => {
     };
 
     return (
-        <div>
-            <h2>Create an Account</h2>
-            {error && <p>{error}</p>}
+        <div className="cyberpunk-bg">
+            <div className="cyberpunk-card-register">
+                <h2>Create an Account</h2>
+                {error && <p>{error}</p>}
 
-            <form onSubmit={handleSubmit}>
+                 <form onSubmit={handleSubmit}>
                 <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
                 <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
                 <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
                 <button>Register</button>
-            </form>
+                </form>
+            </div>
         </div>
     );
 

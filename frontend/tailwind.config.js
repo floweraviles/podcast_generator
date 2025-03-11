@@ -9,10 +9,10 @@ module.exports = {
                 'cyberBlack': "#1a1a1a",
                 'neonBlue': "#4af",
                 'neonPurple': "#b0f",
-                'neonPink': "f70",
-                'neonGreen': "39f900",
-                'neonOrange': "ff9900",
-                'cyberWhite': "e0e0e0",
+                'neonPink': "#f70",
+                'neonGreen': "#39ff14",
+                'neonOrange': "#ff9900",
+                'cyberWhite': "#e0e0e0",
             },
 
             fontFamily: {

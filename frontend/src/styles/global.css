@@ -30,3 +30,31 @@ nav.cyberpunk-navbar a.pink-hover {
 nav.cyberpunk-navbar a.green-hover {
     @apply hover:text-neonGreen;
 }
+
+/* div {
+    @apply bg-cyberBlack text-cyberWhite min-h-screen p-8 flex flex-col items-center justify-center;
+} */
+
+div.cyberpunk-card-register {
+    @apply bg-gray-800 bg-opacity-50 rounded-lg p-8 shadow-lg shadow-neonPurple-md border border-neonPurple w-full max-w-md;
+}
+
+div.cyberpunk-card-register h2 {
+    @apply text-neonGreen text-3xl font-bold mb-4 uppercase tracking-wider text-center;
+}
+
+div.cyberpunk-card-register p {
+    @apply text-neonPink text-sm mb-4;
+}
+
+div.cyberpunk-card-register form {
+    @apply flex flex-col space-y-4;
+}
+
+div.cyberpunk-card-register input {
+    @apply bg-cyberBlack text-cyberWhite p-3 rounded-md w-full mb-4 focus:outline-none focus:ring-2 focus:ring-neonBlue;
+}
+
+div.cyberpunk-card-register button {
+    @apply bg-neonGreen hover:bg-neonGreen text-cyberBlack font-bold py-3 px-6 rounded-full transition-colors duration-200 shadow-md hover:shadow-lg;
+}
