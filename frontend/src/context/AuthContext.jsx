@@ -1,7 +1,7 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import axios from "../services/api";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -29,5 +29,12 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("token");
         setUser(null);
     };
-    return <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>;
+
+    const value = {
+        user,login, logout,
+    };
+
+    return <AuthContext.Provider value={{value}}>{children}</AuthContext.Provider>;
 };
+
+export const useAuth = () => useContext(AuthContext);
