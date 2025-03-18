@@ -14,14 +14,17 @@ const GenerateScript = () => {
         }
     };
     return (
-        <div>
-            <h2>Generate Podcast Script</h2>
-            <textarea value={prompt} onChange={(e) => setPrompt(e.target.value)} placeholder="Enter a topic..." />
-            <button onClick={generateScript}>Generate</button>
-            <div>
-                <h3>Gnerated Script:</h3>
-                <p>{script}</p>
+        <div className="cyberpunk-bg">
+            <div className="cyberpunk-card-gs">
+                <h2>Generate Podcast Script</h2>
+                <textarea value={prompt} onChange={(e) => setPrompt(e.target.value)} placeholder="Enter a topic..." />
+                <button onClick={generateScript}>Generate</button>
+                <div>
+                    <h3>Gnerated Script:</h3>
+                    <p>{script}</p>
+                </div>
             </div>
+
         </div>        
     );
 };

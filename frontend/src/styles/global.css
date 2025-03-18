@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 
-body {
-    @apply bg-cyberBlack text-white; 
-}
+.cyberpunk-bg {
+    @apply bg-cyberBlack text-cyberWhite min-h-screen p-8 flex flex-col items-center justify-center; 
+} 
 
 nav.cyberpunk-navbar {
     @apply bg-cyberBlack p-4 shadow-lg shadow-neonPurple-sm flex justify-between items-center border-b-2 border-neonPurple;
@@ -31,30 +31,71 @@ nav.cyberpunk-navbar a.green-hover {
     @apply hover:text-neonGreen;
 }
 
-/* div {
-    @apply bg-cyberBlack text-cyberWhite min-h-screen p-8 flex flex-col items-center justify-center;
-} */
+.cyberpunk-card-home {
+    @apply bg-gray-800 bg-opacity-50 rounded-lg p-8 shadow-lg shadow-neonPurple-md border border-neonPurple w-full max-w-md text-center;
+}
 
-div.cyberpunk-card-register {
+.cyberpunk-card-home h1 {
+    @apply text-neonBlue text-4xl font-bold mb-6 uppercase tracking-wider text-center;
+}
+
+.cyberpunk-card-home p {
+    @apply text-cyberWhite text-lg mb-8;
+}
+
+.cyberpunk-card-home div {
+    @apply flex justify-center space-x-6;
+}
+
+.res-button {
+    @apply bg-neonGreen hover:bg-neonBlue-dark text-cyberBlack font-bold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-neonBlue focus:ring-opacity-50 transition-colors duration-200 shadow-md shadow-neonGreen-sm hover:shadow-lg hover:shadow-neonGreen-md;
+}
+
+.log-button {
+    @apply bg-neonPink hover:bg-neonBlue-dark text-cyberBlack font-bold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-neonBlue focus:ring-opacity-50 transition-colors duration-200 shadow-md shadow-neonPink-sm hover:shadow-lg hover:shadow-neonPink-md;
+}
+
+.cyberpunk-card-register {
     @apply bg-gray-800 bg-opacity-50 rounded-lg p-8 shadow-lg shadow-neonPurple-md border border-neonPurple w-full max-w-md;
 }
 
-div.cyberpunk-card-register h2 {
+.cyberpunk-card-register h2 {
     @apply text-neonGreen text-3xl font-bold mb-4 uppercase tracking-wider text-center;
 }
 
-div.cyberpunk-card-register p {
+.cyberpunk-card-register p {
     @apply text-neonPink text-sm mb-4;
 }
 
-div.cyberpunk-card-register form {
+.cyberpunk-card-register form {
     @apply flex flex-col space-y-4;
 }
 
-div.cyberpunk-card-register input {
+.cyberpunk-card-register input {
     @apply bg-cyberBlack text-cyberWhite p-3 rounded-md w-full mb-4 focus:outline-none focus:ring-2 focus:ring-neonBlue;
 }
 
-div.cyberpunk-card-register button {
-    @apply bg-neonGreen hover:bg-neonGreen text-cyberBlack font-bold py-3 px-6 rounded-full transition-colors duration-200 shadow-md hover:shadow-lg;
+.cyberpunk-card-register button {
+    @apply bg-neonGreen hover:bg-neonBlue text-cyberBlack font-bold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-neonBlue focus:ring-opacity-50 transition-colors duration-200 shadow-md shadow-neonGreen-sm hover:shadow-lg hover:shadow-neonGreen-md;
 }
+
+.cyberpunk-card-login {
+    @apply bg-gray-800 bg-opacity-50 rounded-lg p-8 shadow-lg shadow-neonPurple-md border border-neonPurple w-full max-w-md;
+}
+
+.cyberpunk-card-login h2 {
+    @apply text-neonPink text-3xl font-bold mb-4 uppercase tracking-wider text-center;
+}
+
+.cyberpunk-card-login form {
+    @apply flex flex-col space-y-4;
+}
+
+.cyberpunk-card-login input {
+    @apply bg-cyberBlack text-cyberWhite p-3 rounded-md w-full mb-4 focus:outline-none focus:ring-2 focus:ring-neonBlue;
+}
+
+.cyberpunk-card-login button {
+    @apply bg-neonPink hover:bg-neonBlue text-cyberBlack font-bold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-neonBlue focus:ring-opacity-50 transition-colors duration-200 shadow-md shadow-neonPink-sm hover:shadow-lg hover:shadow-neonPink-md;
+}
+
