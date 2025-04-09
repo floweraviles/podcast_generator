@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const dotenv = require("dotenv");
 const { sequelize } = require("./models");
 const authRoutes = require("./routes/authRoutes");
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/podcast", podcastRoutes);
 app.use("/api/scripts", scriptRoutes);
+app.use("/audio", express.static(path.join(__dirname, "public/audio")));
 
 //Start Server
 const PORT = process.env.PORT || 5001;

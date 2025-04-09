@@ -4,6 +4,7 @@ import ProtectedRoute from "../components/ProtectedRoute";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
+import GenerateScript from "../pages/GenerateScript";
 import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
@@ -21,6 +22,7 @@ const AppRoutes = () => {
                     element={
                         <ProtectedRoute user={user}>
                             <Dashboard />
+                            <GenerateScript />
                         </ProtectedRoute>
                     }
                 />

@@ -19,7 +19,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchPodcasts = async () => {
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/podcasts`, {
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/podcast`, {
                    headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                    },
@@ -31,8 +31,6 @@ const Dashboard = () => {
                 setPodcasts(data);
             } catch (err) {
                 setError(err.message);
-            } finally {
-                setLoading(false);
             }
         };
 
@@ -48,9 +46,15 @@ const Dashboard = () => {
         audio.play();
     };
 
+    const handlePause = () => {
+        if (playingAudio) {
+            playingAudio.pause();
+        }
+    };
+
     const handleDelete = async (id) => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/podcasts/${id}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/podcast/${id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -66,26 +70,28 @@ const Dashboard = () => {
 
     return (
         <div className="cyberpunk-bg">
-            <div className="cyberpunk-card-dash">
-                <h2>Welcome to Your Dashboard</h2>
+            <div className="dashboard-container">
+                <h2 className="dashboard-title">Welcome to Your Dashboard</h2>
 
                 {error && <p>{error}</p>}
 
-                <div>
+                <div className="podcast-grid">
                     {podcasts.length > 0 ? (
                         podcasts.map((podcast) => (
                             <PodcastCard 
                             key={podcast.id} 
                             podcast={podcast}
                             onPlay={handlePlay}
+                            onPause={handlePause}
                             onDelete={handleDelete}
                              />
                         ))
                     ) : (
-                         <p>No podcasts found.</p>
+                         <p className="empty-message">No podcasts found.</p>
                     )}
                 </div>
-                         <div>
+                         <div className="dashboard-button">
+                            <button onClick={() => navigate("/generate-script")}>Generate New Podcast</button>
                             <button onClick={handleLogout}>Logout</button>
                         </div>
             </div>

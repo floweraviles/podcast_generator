@@ -99,3 +99,190 @@ nav.cyberpunk-navbar a.green-hover {
     @apply bg-neonPink hover:bg-neonBlue text-cyberBlack font-bold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-neonBlue focus:ring-opacity-50 transition-colors duration-200 shadow-md shadow-neonPink-sm hover:shadow-lg hover:shadow-neonPink-md;
 }
 
+.script-display {
+     margin-top:1.5rem;
+     color:#e0e0e0;
+}
+
+.script-box {
+    border: 2px solid #00ffff;
+    padding: 1rem;
+    border-radius: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-family: "Courier New", monospace;
+    line-height: 1.5;
+}
+
+.cyberpunk-container {
+    max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(25, 25, 35, 0.95);
+  border: 2px solid #00f0ff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00f0ff;
+}
+
+.cyberpunk-container textarea, input{
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #0f0f0f;
+  border: 1px solid #00f0ff;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cyberpunk-container textarea:focus, input {
+    border-color: #ff00cc;
+    box-shadow: 0 0 10px #ff00cc;
+    outline: none;
+}
+
+.cyberpunk-container button {
+    background: linear-gradient(45deg, #00f0ff, #ff00cc);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    margin-right: 1rem;
+}
+
+.cyberpunk-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff00cc, 0 0 25px #00f0ff;
+}
+
+.dashboard-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    min-height: 40vh;
+    background: rgba(20, 20, 30, 0.95);
+    border: 2px solid #ff00cc;
+    border-radius: 16px;
+    box-shadow: 0 0 20px #ff00cc;
+  }
+
+  .dashboard-title {
+    font-size: 2rem;
+    text-align: center;
+    color: #00f0ff;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 8px #00f0ff;
+  }
+
+  .podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .empty-message {
+    color: #ccc;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    opacity: 0.7;
+  }
+
+  .dashboard-button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 4rem;
+  }
+
+  .dashboard-button button {
+    background: linear-gradient(45deg, #00f0ff, #ff00cc);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    margin-right: 1rem;
+  }
+
+  
+  .cyberpunk-card {
+    background: rgba(15, 15, 25, 0.95);
+    border: 2px solid hsl(103, 100%, 53%);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 0 12px #e3ff0e;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .cyberpunk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #ff00cc, 0 0 15px #00f0ff;
+  }
+  
+ 
+  .cyberpunk-card h3 {
+    font-size: 1.3rem;
+    color: #f2f2f2;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 6px hsl(63, 100%, 55%);
+  }
+  
+  
+  .cyberpunk-card p {
+    font-size: 0.95rem;
+    color: #d0d0d0;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  
+  .cyberpunk-card div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .cyberpunk-button-blue,
+  .cyberpunk-button-purple {
+    background: linear-gradient(45deg, #00f0ff, #0077ff);
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cyberpunk-button-purple {
+    background: linear-gradient(45deg, #ff00cc, #8a2be2);
+  }
+  
+  .cyberpunk-button-blue:hover,
+  .cyberpunk-button-purple:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00cc;
+  }
+  
+  .cyberpunk-button-blue svg,
+  .cyberpunk-button-purple svg {
+    margin-right: 0.4rem;
+  }

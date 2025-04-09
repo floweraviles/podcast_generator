@@ -3,6 +3,9 @@ const { Podcast } = require("../models");
 exports.createPodcast = async (req, res) => {
     try {
         const { title, script, audioURL } = req.body;
+        if (!title || !audioURL) {
+            return res.status(400).json({ error: "Title and audio URL are required."})
+        }
         const podcast = await Podcast.create({ title, script, audioURL, userId: req.user.id });
         res.status(201).json(podcast);
     } catch (error) {

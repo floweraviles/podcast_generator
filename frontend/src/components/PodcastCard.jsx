@@ -1,8 +1,8 @@
 import React from "react";
-import { FaPlay, FaTrash } from "react-icons/fa";
+import { FaPlay, FaPause, FaTrash } from "react-icons/fa";
 import "../styles/global.css";
 
-const PodcastCard = ({ podcast, onPlay, onDelete }) => {
+const PodcastCard = ({ podcast, onPlay, onPause, onDelete }) => {
     return (
         <div className="cyberpunk-card">
             <h3>{podcast.title}</h3>
@@ -11,6 +11,10 @@ const PodcastCard = ({ podcast, onPlay, onDelete }) => {
             <div>
                 <button className="cyberpunk-button-blue" onClick={() => onPlay(podcast.audioURL)}>
                     <FaPlay className="inline-block mr-2" /> <span>Play</span>
+                </button>
+
+                <button onClick={onPause}> 
+                    <FaPause /> <span>Pause</span>
                 </button>
 
                 <button className="cyberpunk-button-purple" onClick={() => onDelete(podcast.id)}>

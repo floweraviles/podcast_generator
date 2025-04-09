@@ -8,6 +8,7 @@ const Navbar = () => {
             <h1 >Podcast Generator</h1>
             <div>
                 <Link to="/">Home</Link>
+                <Link to="/dashboard">Dashboard</Link>
                 <Link to="/login" className="pink-hover">Login</Link>
                 <Link to="/register" className="green-hover">Register</Link>
             </div>
